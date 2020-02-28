@@ -21,8 +21,9 @@ from rest_framework import routers
 from historia.usuario import views
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'hospital', views.HospitalViewSet)
+router.register(r'medico', views.MedicoViewSet)
+router.register(r'paciente', views.PacienteViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

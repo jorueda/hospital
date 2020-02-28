@@ -1,0 +1,6 @@
+# git ignore
+env
+db.sqlite3
+historia/__pycache__
+historia/usuario/__pycache__
+historia/usuario/migrations

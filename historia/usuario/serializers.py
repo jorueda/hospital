@@ -1,14 +1,20 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
+from .models import Hospital, Medico, Paciente
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class HospitalSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'groups']
+        model = Hospital
+        fields = '__all__'
 
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+class MedicoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Group
-        fields = ['url', 'name']
+        model = Medico
+        fields = '__all__'
+
+class PacienteSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Paciente
+        fields = '__all__'

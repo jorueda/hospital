@@ -3,20 +3,28 @@ from django.shortcuts import render
 # Create your views here.
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from historia.usuario.serializers import UserSerializer, GroupSerializer
+
+from historia.usuario.serializers import HospitalSerializer, MedicoSerializer, PacienteSerializer
+from .models import Hospital, Medico, Paciente
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class HospitalViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+    queryset = Hospital.objects.all()
+    serializer_class = HospitalSerializer
 
+class MedicoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Medico.objects.all()
+    serializer_class = MedicoSerializer
 
-class GroupViewSet(viewsets.ModelViewSet):
+class PacienteViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+    API endpoint that allows users to be viewed or edited.
     """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+    queryset = Paciente.objects.all()
+    serializer_class = PacienteSerializer
