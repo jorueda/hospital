@@ -1,5 +1,6 @@
-# git ignore
+### git ignore ###
 env
+.vscode
 db.sqlite3
 historia/__pycache__
 historia/usuario/__pycache__
